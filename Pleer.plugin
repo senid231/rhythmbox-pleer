@@ -1,0 +1,10 @@
+[Plugin]
+Loader=python
+Module=pleer
+IAge=1
+Depends=rb
+Name=Pleer
+Description=Search, browse, and listen to Pleer music.
+Authors=S2h G
+Copyright=Copyright © 2010 S2h
+Website=http://github.com/G-S2h
