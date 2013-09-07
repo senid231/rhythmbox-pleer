@@ -1,8 +1,13 @@
-INSTALLATION:
-cd ~/.local/share/rhythmbox/plugins
-git clone https://github.com/G-S2h/rhythmbox-pleer.git pleer
+Installation: 
+
+1. cd ~/.local/share/rhythmbox/plugins
+2. git clone https://github.com/G-S2h/rhythmbox-pleer.git pleer
+
+Note:
+
 
 This plugin is mainly inspired by rhythmbox-vkontake one, originally made by grunichev user.
+
 ===========
 
 Copyright © 2010 Alexey Grunichev
@@ -24,5 +29,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ===========
 
 icon author: hydrattz
+
 icon source: http://www.iconarchive.com/show/multipurpose-alphabet-icons-by-hydrattz/Letter-P-grey-icon.html
 
