@@ -68,7 +68,7 @@ class PleerSource(RB.Source):
 
 	def do_get_status(self, status, progress_text, progress):
 		if self.downloading:
-			print "self.downloading = %s" % self.downloading
+			print("self.downloading = %s" % self.downloading);
 			if self.__load_total_size > 0:
 				# Got data
 				progress = min (float(self.__load_current_size) / self.__load_total_size, 1.0)
@@ -81,7 +81,7 @@ class PleerSource(RB.Source):
 			return (status, "", progress)
 		
 		if hasattr(self, 'current_search') and self.current_search:
-			print "self.current_search = '%s'" % self.current_search
+			print("self.current_search = '%s'" % self.current_search)
 			if self.searches[self.current_search].is_complete():
 				self.error_msg = self.searches[self.current_search].error_msg
 				if not self.error_msg:
@@ -90,7 +90,7 @@ class PleerSource(RB.Source):
 				return ("Searching for \"{0}\"".format(self.current_search), "", -1)
 		
 		if self.error_msg:
-			print "self.error_msg = '%s'" % self.error_msg
+			print("self.error_msg = '%s'" % self.error_msg)
 			#error_msg = self.error_msg
 			#self.error_msg = ''
 			return (self.error_msg, "", 1)

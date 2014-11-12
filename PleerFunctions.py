@@ -16,7 +16,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 import urllib
-import urllib2
+import urllib.parse
+import urllib.request as urllib2
 
 import re
 
@@ -24,7 +25,7 @@ import re
 def parse_tracks(html):
 	""" Parse HTML to retrieve listed tracks """
 	matches = []
-	records = re.findall( '<li duration="(.*?)source="default">', html, re.MULTILINE|re.DOTALL )
+	records = re.findall( '<li duration="(.*?)source="default">', html.decode(), re.MULTILINE|re.DOTALL )
 	
 	for currRecord in records :
 		details = {
@@ -49,13 +50,13 @@ def getMp3URL(linkId):
 	
 	postData = { 'action': 'play', 'id': linkId }
 	
-	encodedPost = urllib.urlencode(postData)
+	encodedPost = urllib.parse.urlencode(postData).encode('utf-8')
 	httpRequest = urllib2.Request(url, encodedPost, header)
 	
 	httpResponse = urllib2.urlopen(httpRequest)
 	textResponse = httpResponse.read()
 	
-	matches = re.findall('track_link":"(.*?)"', textResponse, re.MULTILINE|re.DOTALL)
+	matches = re.findall('track_link":"(.*?)"', textResponse.decode(), re.MULTILINE|re.DOTALL)
 	
 	if len(matches):
 		mp3URL = matches[0]
